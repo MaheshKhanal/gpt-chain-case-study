@@ -180,7 +180,7 @@ process.on('SIGINT', async () => {
 
 let server: any;
 
-// Only start the server if not in test environment
+// Only start the server if not in test environment. had to do this to write test properly. 
 if (process.env.NODE_ENV !== 'test') {
   server = app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

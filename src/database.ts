@@ -5,6 +5,8 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
+// normally would use a ORM like Prisma or TypeORM, but for this project, I wanted to keep it simple and use raw SQL. 
+
 export class Database {
   static async createJob(eventId: string, inputText: string): Promise<Job> {
     const query = `
